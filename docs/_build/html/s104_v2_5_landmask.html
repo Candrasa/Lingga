@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>s104_v2_5_landmask module &mdash; Project name not set  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="S111_70_85_smart_grid_auto_iterasi_landmask module" href="S111_70_85_smart_grid_auto_iterasi_landmask.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Project name not set
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="S111_70_85_smart_grid_auto_iterasi_landmask.html">S111_70_85_smart_grid_auto_iterasi_landmask module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">s104_v2_5_landmask module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dfsu-s-104-hdf5-pipeline-with-integrated-land-masking">DFSU → S-104 HDF5 PIPELINE WITH INTEGRATED LAND MASKING</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iho-s-104-edition-2-0-0-dcf-2-wgs84-mllw">IHO S-104 Edition 2.0.0 | DCF 2 | WGS84 | MLLW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.apply_land_mask_to_data"><code class="docutils literal notranslate"><span class="pre">apply_land_mask_to_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.build_bbox_mask"><code class="docutils literal notranslate"><span class="pre">build_bbox_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.build_grid_and_properties"><code class="docutils literal notranslate"><span class="pre">build_grid_and_properties()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.build_land_mask"><code class="docutils literal notranslate"><span class="pre">build_land_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.build_s104_metadata"><code class="docutils literal notranslate"><span class="pre">build_s104_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.build_split_plan"><code class="docutils literal notranslate"><span class="pre">build_split_plan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.classify_and_renumber_tiles"><code class="docutils literal notranslate"><span class="pre">classify_and_renumber_tiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.compute_masked_stats"><code class="docutils literal notranslate"><span class="pre">compute_masked_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.compute_wl_trend"><code class="docutils literal notranslate"><span class="pre">compute_wl_trend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.create_s104_hdf5"><code class="docutils literal notranslate"><span class="pre">create_s104_hdf5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.load_land_union"><code class="docutils literal notranslate"><span class="pre">load_land_union()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.open_and_detect_dfsu"><code class="docutils literal notranslate"><span class="pre">open_and_detect_dfsu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.parse_area_list"><code class="docutils literal notranslate"><span class="pre">parse_area_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.plot_tile_catalog"><code class="docutils literal notranslate"><span class="pre">plot_tile_catalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.process_one_day_full"><code class="docutils literal notranslate"><span class="pre">process_one_day_full()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.regrid_to_s104"><code class="docutils literal notranslate"><span class="pre">regrid_to_s104()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.run_catalog_only"><code class="docutils literal notranslate"><span class="pre">run_catalog_only()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.run_full_pipeline"><code class="docutils literal notranslate"><span class="pre">run_full_pipeline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.run_mask_only"><code class="docutils literal notranslate"><span class="pre">run_mask_only()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.run_multi_grid_pipeline"><code class="docutils literal notranslate"><span class="pre">run_multi_grid_pipeline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.safe_close_hdf5"><code class="docutils literal notranslate"><span class="pre">safe_close_hdf5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.save_tile_mapping_csv"><code class="docutils literal notranslate"><span class="pre">save_tile_mapping_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.setup_logging"><code class="docutils literal notranslate"><span class="pre">setup_logging()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.validate_dependencies"><code class="docutils literal notranslate"><span class="pre">validate_dependencies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.validate_masked_h5"><code class="docutils literal notranslate"><span class="pre">validate_masked_h5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s104_v2_5_landmask.write_masked_hdf5_manual"><code class="docutils literal notranslate"><span class="pre">write_masked_hdf5_manual()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Project name not set</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">s104_v2_5_landmask module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/s104_v2_5_landmask.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-s104_v2_5_landmask">
+<span id="s104-v2-5-landmask-module"></span><h1>s104_v2_5_landmask module<a class="headerlink" href="#module-s104_v2_5_landmask" title="Link to this heading"></a></h1>
+<section id="dfsu-s-104-hdf5-pipeline-with-integrated-land-masking">
+<h2>DFSU → S-104 HDF5 PIPELINE WITH INTEGRATED LAND MASKING<a class="headerlink" href="#dfsu-s-104-hdf5-pipeline-with-integrated-land-masking" title="Link to this heading"></a></h2>
+</section>
+<section id="iho-s-104-edition-2-0-0-dcf-2-wgs84-mllw">
+<h2>IHO S-104 Edition 2.0.0 | DCF 2 | WGS84 | MLLW<a class="headerlink" href="#iho-s-104-edition-2-0-0-dcf-2-wgs84-mllw" title="Link to this heading"></a></h2>
+<dl>
+<dt>PIPELINE TERINTEGRASI:</dt><dd><ol class="arabic simple">
+<li><p>Konversi DFSU → Grid S-104 (regrid + datum conversion + trend)</p></li>
+<li><p>Build Land Mask dari Shapefile (OSM/Custom)</p></li>
+<li><p>Apply Land Mask ke semua timestep</p></li>
+<li><p>Output: HDF5 S-104 masked (daily/hourly/3day/single)</p></li>
+</ol>
+</dd>
+<dt>Struktur S-104 DCF=2 (Regular Grid) yang dihasilkan:</dt><dd><dl>
+<dt>/WaterLevel/WaterLevel.01</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>attrs: gridOriginLongitude, gridOriginLatitude,</dt><dd><p>gridSpacingLongitudinal, gridSpacingLatitudinal,
+numPointsLongitudinal, numPointsLatitudinal</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>/Group_001/</dt><dd><p>attr: timePoint (YYYYMMDDTHHMMSSZ)
+dataset: values — 2D compound array [NY, NX]
+compound fields: waterLevelHeight (f32), waterLevelTrend (uint8)
+fillValue height: -9999.0
+fillValue trend: 0 (Unknown)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Fitur:</dt><dd><ul class="simple">
+<li><p>Single-pass processing (tidak ada file intermediate)</p></li>
+<li><p>Land mask reusable (disimpan sebagai dataset di HDF5)</p></li>
+<li><p>Auto-patch atribut grid</p></li>
+<li><p>Multiple output modes: daily | hourly | 3day | single</p></li>
+<li><p>Validasi hasil masking</p></li>
+<li><p>Metadata IHO S-104 Ed. 2.0.0 compliant</p></li>
+</ul>
+</dd>
+<dt>Dependencies:</dt><dd><p>mikeio, s100py, scipy, numpy, h5py, geopandas, shapely</p>
+</dd>
+</dl>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.apply_land_mask_to_data">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">apply_land_mask_to_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wl_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wl_trend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#apply_land_mask_to_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.apply_land_mask_to_data" title="Link to this definition"></a></dt>
+<dd><p>Apply land mask ke grid water level dan trend.
+waterLevelHeight → NODATA_WL (-9999.0)
+waterLevelTrend → NODATA_TREND (0 = Unknown)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.build_bbox_mask">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">build_bbox_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_lids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#build_bbox_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.build_bbox_mask" title="Link to this definition"></a></dt>
+<dd><p>Filter elemen DFSU yang berada dalam BBOX.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.build_grid_and_properties">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">build_grid_and_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#build_grid_and_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.build_grid_and_properties" title="Link to this definition"></a></dt>
+<dd><p>Bangun grid terstruktur S-104 dari BBOX dan resolusi.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.build_land_mask">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">build_land_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shp_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#build_land_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.build_land_mask" title="Link to this definition"></a></dt>
+<dd><p>Build land mask dari shapefile polygon daratan.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>land_union</strong> – jika diberikan (hasil load_land_union), shapefile TIDAK
+dibaca ulang — langsung dipakai untuk point-in-polygon test.
+Jika None, perilaku SAMA PERSIS seperti sebelumnya (baca shapefile
+per-panggilan, backward compatible).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean array (NY, NX), True = daratan
+mask_info: Dict info masking</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>land_mask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.build_s104_metadata">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">build_s104_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geographic_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Selat</span> <span class="pre">Lombok,</span> <span class="pre">Indonesia'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#build_s104_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.build_s104_metadata" title="Link to this definition"></a></dt>
+<dd><p>Build metadata IHO S-104 Ed. 2.0.0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.build_split_plan">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">build_split_plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#build_split_plan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.build_split_plan" title="Link to this definition"></a></dt>
+<dd><p>Bangun rencana split output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.classify_and_renumber_tiles">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">classify_and_renumber_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">areas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#classify_and_renumber_tiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.classify_and_renumber_tiles" title="Link to this definition"></a></dt>
+<dd><p>Klasifikasi tiap tile (PURE_LAND/MIXED/PURE_SEA/NO_DATA) dan penomoran
+ulang spasial (row=0 di selatan, col=0 di barat; urutan S→N lalu W→E).</p>
+<p>Tile yang PURE_LAND (land_frac &gt;= LAND_SKIP_THRESHOLD) atau NO_DATA
+(tidak ada elemen DFSU di dalam bbox, bila elem_x/elem_y diberikan)
+dikeluarkan (keep=False) dari output S-104 — tapi tetap dilaporkan
+di CSV mapping &amp; PNG catalog untuk keperluan evaluasi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>areas</strong> – list of dict dari parse_area_list (name, min_lat, min_lon,
+max_lat, max_lon).</p></li>
+<li><p><strong>land_union</strong> – shapely geometry (hasil load_land_union) atau None
+(→ land_frac=0.0 untuk semua tile, semua dianggap PURE_SEA).</p></li>
+<li><p><strong>elem_x</strong> – koordinat elemen DFSU (opsional). Jika None, n_elem
+tidak dihitung (None) dan tidak dipakai untuk exclude.</p></li>
+<li><p><strong>elem_y</strong> – koordinat elemen DFSU (opsional). Jika None, n_elem
+tidak dihitung (None) dan tidak dipakai untuk exclude.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>name, bbox, center_lon, center_lat, land_frac, n_elem, tile_class,
+keep, row, col, new_name, new_num.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict] — satu entry per tile (termasuk yang di-skip), keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.compute_masked_stats">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">compute_masked_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wl_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#compute_masked_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.compute_masked_stats" title="Link to this definition"></a></dt>
+<dd><p>Hitung statistik untuk sel perairan valid saja.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.compute_wl_trend">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">compute_wl_trend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wl_current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wl_prev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#compute_wl_trend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.compute_wl_trend" title="Link to this definition"></a></dt>
+<dd><p>Hitung trend water level per S-104 spec:
+1=Decreasing, 2=Increasing, 3=Steady, 0=Unknown (NODATA)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.create_s104_hdf5">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">create_s104_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_h5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dcf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#create_s104_hdf5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.create_s104_hdf5" title="Link to this definition"></a></dt>
+<dd><p>Create file S-104 HDF5 baru menggunakan s100py.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.load_land_union">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">load_land_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shp_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_bbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-5e-05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#load_land_union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.load_land_union" title="Link to this definition"></a></dt>
+<dd><p>Baca shapefile daratan SEKALI (clipped ke full_bbox gabungan semua tile),
+lalu union_all() + buffer. Dipakai agar 154 tile tidak masing-masing
+membaca shapefile sendiri-sendiri (mahal untuk ratusan tile).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shp_path</strong> – path shapefile.</p></li>
+<li><p><strong>full_bbox</strong> – (minlon, minlat, maxlon, maxlat) — bbox gabungan seluruh tile.</p></li>
+<li><p><strong>buffer_deg</strong> – buffer dalam derajat (default LAND_BUFFER_DEG).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>shapely geometry (union, sudah di-buffer) atau None jika kosong.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.main">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.main" title="Link to this definition"></a></dt>
+<dd><p>Entry point utama dengan mode selection.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.open_and_detect_dfsu">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">open_and_detect_dfsu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfsu_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#open_and_detect_dfsu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.open_and_detect_dfsu" title="Link to this definition"></a></dt>
+<dd><p>Buka file DFSU dan deteksi tipe (2D/3D).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.parse_area_list">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">parse_area_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#parse_area_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.parse_area_list" title="Link to this definition"></a></dt>
+<dd><p>Parse area_list.txt (21 grid) menjadi list of dict.</p>
+<dl class="simple">
+<dt>Format tiap baris (CSV tanpa header):</dt><dd><p>Name,min_lat,min_lon,max_lat,max_lon</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>name, min_lat, min_lon, max_lat, max_lon.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[dict] keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.plot_tile_catalog">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">plot_tile_catalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_shp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_png</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#plot_tile_catalog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.plot_tile_catalog" title="Link to this definition"></a></dt>
+<dd><p>Render peta katalog tile: poligon daratan sebagai latar, kotak tile
+berwarna per kelas, nomor baru untuk tile yang kept.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.process_one_day_full">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">process_one_day_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day_timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_mask_2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wl_prev_carry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'104_70_85_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wl_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_to_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_elem_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#process_one_day_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.process_one_day_full" title="Link to this definition"></a></dt>
+<dd><p>Proses satu hari: DFSU → Regrid → Mask → Write HDF5.
+Land mask di-apply langsung saat write (single-pass).</p>
+<p>Args:
+wl_cache, time_to_idx, bbox_elem_idx: bila wl_cache diberikan (preload
+RAM, lihat run_multi_grid_pipeline), timestep dibaca dari array
+in-memory alih-alih ds_open.read()/isel() per timestep — jauh
+lebih cepat untuk ratusan tile. Bila wl_cache None, perilaku
+SAMA PERSIS seperti sebelumnya (baca DFSU langsung per timestep).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.regrid_to_s104">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">regrid_to_s104</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#regrid_to_s104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.regrid_to_s104" title="Link to this definition"></a></dt>
+<dd><p>Interpolasi dari mesh tidak terstruktur ke grid terstruktur.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.run_catalog_only">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">run_catalog_only</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#run_catalog_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.run_catalog_only" title="Link to this definition"></a></dt>
+<dd><p>Mode catalog_only: parse_area_list → load_land_union → klasifikasi +
+penomoran ulang tile → PNG catalog + CSV mapping. TIDAK butuh DFSU/s100py
+— hanya geopandas+shapely (+matplotlib opsional untuk PNG).</p>
+<p>Berguna untuk evaluasi cepat tata-letak tile &amp; land masking sebelum
+menjalankan pipeline penuh (yang butuh DFSU dan berjalan jauh lebih lama).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.run_full_pipeline">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">run_full_pipeline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#run_full_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.run_full_pipeline" title="Link to this definition"></a></dt>
+<dd><p>Pipeline lengkap: DFSU → S-104 → Land Mask (single-pass).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.run_mask_only">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">run_mask_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_h5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_shp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#run_mask_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.run_mask_only" title="Link to this definition"></a></dt>
+<dd><p>Mode mask-only: Baca HDF5 S-104 existing → Apply land mask → Split output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.run_multi_grid_pipeline">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">run_multi_grid_pipeline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#run_multi_grid_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.run_multi_grid_pipeline" title="Link to this definition"></a></dt>
+<dd><p>Pipeline MULTI-GRID: baca N grid dari area_list.txt → hasilkan HDF5
+TERPISAH per grid (satu subfolder per grid).</p>
+<p>Alur per-grid IDENTIK dengan run_full_pipeline (DFSU→regrid→datum→trend→
+land mask→write, single-pass). Yang berbeda:
+- DFSU dibuka SEKALI lalu di-reuse untuk semua grid (efisiensi).
+- Land geometry (shapefile) dibaca SEKALI via load_land_union, reuse</p>
+<blockquote>
+<div><p>untuk build_land_mask tiap tile (bukan baca shapefile per-tile).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Tile diklasifikasi (PURE_LAND/MIXED/PURE_SEA/NO_DATA) &amp; dinomori
+ulang secara spasial (S→N, W→E); tile PURE_LAND/NO_DATA dilewati.</p></li>
+<li><p>WL time-series di-preload SEKALI ke RAM (bila ukuran wajar) agar
+tidak ada pembacaan DFSU berulang per tile.</p></li>
+<li><p>BBOX, grid, dan land mask tetap dibangun ulang per tile (murah).</p></li>
+<li><p>Output ditulis ke OUTPUT_DIR/&lt;new_name&gt;/ dengan prefix per tile.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.safe_close_hdf5">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">safe_close_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_h5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#safe_close_hdf5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.safe_close_hdf5" title="Link to this definition"></a></dt>
+<dd><p>Force close semua handle HDF5 yang terbuka untuk file tertentu.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.save_tile_mapping_csv">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">save_tile_mapping_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#save_tile_mapping_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.save_tile_mapping_csv" title="Link to this definition"></a></dt>
+<dd><p>Tulis CSV mapping old_name → new_name (+ row/col/class/land_frac/dll).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.setup_logging">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">setup_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#setup_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.setup_logging" title="Link to this definition"></a></dt>
+<dd><p>Setup logging ke file dan console dengan UTF-8.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.validate_dependencies">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">validate_dependencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#validate_dependencies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.validate_dependencies" title="Link to this definition"></a></dt>
+<dd><p>Validasi dependensi berdasarkan mode operasi.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.validate_masked_h5">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">validate_masked_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#validate_masked_h5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.validate_masked_h5" title="Link to this definition"></a></dt>
+<dd><p>Validasi file HDF5 hasil masking.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="s104_v2_5_landmask.write_masked_hdf5_manual">
+<span class="sig-prename descclassname"><span class="pre">s104_v2_5_landmask.</span></span><span class="sig-name descname"><span class="pre">write_masked_hdf5_manual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/s104_v2_5_landmask.html#write_masked_hdf5_manual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#s104_v2_5_landmask.write_masked_hdf5_manual" title="Link to this definition"></a></dt>
+<dd><p>Salin struktur HDF5 dan apply land mask untuk subset groups.
+Compound dtype: waterLevelHeight (f32) + waterLevelTrend (uint8)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="S111_70_85_smart_grid_auto_iterasi_landmask.html" class="btn btn-neutral float-left" title="S111_70_85_smart_grid_auto_iterasi_landmask module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

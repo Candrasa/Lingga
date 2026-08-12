@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S111_70_85_smart_grid_auto_iterasi_landmask module &mdash; Project name not set  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="s104_v2_5_landmask module" href="s104_v2_5_landmask.html" />
+    <link rel="prev" title="Modules" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Project name not set
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">S111_70_85_smart_grid_auto_iterasi_landmask module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dfsu-s-111-hdf5-pipeline-v2-10-landmask-refactor">DFSU -&gt; S-111 HDF5 PIPELINE — v2.10 LANDMASK REFACTOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.adaptive_grid_resolution"><code class="docutils literal notranslate"><span class="pre">adaptive_grid_resolution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5"><code class="docutils literal notranslate"><span class="pre">apply_land_mask_to_h5()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5_multi"><code class="docutils literal notranslate"><span class="pre">apply_land_mask_to_h5_multi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_bbox_mask"><code class="docutils literal notranslate"><span class="pre">build_bbox_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_day_blocks"><code class="docutils literal notranslate"><span class="pre">build_day_blocks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_grid_and_properties"><code class="docutils literal notranslate"><span class="pre">build_grid_and_properties()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_land_mask"><code class="docutils literal notranslate"><span class="pre">build_land_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_s111_metadata"><code class="docutils literal notranslate"><span class="pre">build_s111_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.calculate_estimated_file_size"><code class="docutils literal notranslate"><span class="pre">calculate_estimated_file_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_filter_grids"><code class="docutils literal notranslate"><span class="pre">classify_and_filter_grids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_renumber_grids"><code class="docutils literal notranslate"><span class="pre">classify_and_renumber_grids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_auto"><code class="docutils literal notranslate"><span class="pre">configure_area_auto()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_gridfile"><code class="docutils literal notranslate"><span class="pre">configure_area_from_gridfile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_list"><code class="docutils literal notranslate"><span class="pre">configure_area_from_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_manual"><code class="docutils literal notranslate"><span class="pre">configure_area_manual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.detect_dfsu_resolution"><code class="docutils literal notranslate"><span class="pre">detect_dfsu_resolution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.generate_new_grid_names"><code class="docutils literal notranslate"><span class="pre">generate_new_grid_names()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.load_land_union"><code class="docutils literal notranslate"><span class="pre">load_land_union()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.mask_extrapolation_boundary"><code class="docutils literal notranslate"><span class="pre">mask_extrapolation_boundary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.open_and_detect_dfsu"><code class="docutils literal notranslate"><span class="pre">open_and_detect_dfsu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.parse_grid_file"><code class="docutils literal notranslate"><span class="pre">parse_grid_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.plot_grid_catalog"><code class="docutils literal notranslate"><span class="pre">plot_grid_catalog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.prepare_grid_context"><code class="docutils literal notranslate"><span class="pre">prepare_grid_context()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_daily"><code class="docutils literal notranslate"><span class="pre">process_daily()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_daily_multi_instance"><code class="docutils literal notranslate"><span class="pre">process_daily_multi_instance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_hourly"><code class="docutils literal notranslate"><span class="pre">process_hourly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_one_timestep"><code class="docutils literal notranslate"><span class="pre">process_one_timestep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_single_grid"><code class="docutils literal notranslate"><span class="pre">process_single_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.regrid_to_s111"><code class="docutils literal notranslate"><span class="pre">regrid_to_s111()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.regrid_uv_to_s111"><code class="docutils literal notranslate"><span class="pre">regrid_uv_to_s111()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.reopen_dfsu"><code class="docutils literal notranslate"><span class="pre">reopen_dfsu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_create_s111"><code class="docutils literal notranslate"><span class="pre">safe_close_and_create_s111()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_delete"><code class="docutils literal notranslate"><span class="pre">safe_close_and_delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping"><code class="docutils literal notranslate"><span class="pre">save_grid_mapping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_csv"><code class="docutils literal notranslate"><span class="pre">save_grid_mapping_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_json"><code class="docutils literal notranslate"><span class="pre">save_grid_mapping_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.uv_to_speed_direction"><code class="docutils literal notranslate"><span class="pre">uv_to_speed_direction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#S111_70_85_smart_grid_auto_iterasi_landmask.validate_land_masked_h5"><code class="docutils literal notranslate"><span class="pre">validate_land_masked_h5()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="s104_v2_5_landmask.html">s104_v2_5_landmask module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Project name not set</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">S111_70_85_smart_grid_auto_iterasi_landmask module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/S111_70_85_smart_grid_auto_iterasi_landmask.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-S111_70_85_smart_grid_auto_iterasi_landmask">
+<span id="s111-70-85-smart-grid-auto-iterasi-landmask-module"></span><h1>S111_70_85_smart_grid_auto_iterasi_landmask module<a class="headerlink" href="#module-S111_70_85_smart_grid_auto_iterasi_landmask" title="Link to this heading"></a></h1>
+<section id="dfsu-s-111-hdf5-pipeline-v2-10-landmask-refactor">
+<h2>DFSU -&gt; S-111 HDF5 PIPELINE — v2.10 LANDMASK REFACTOR<a class="headerlink" href="#dfsu-s-111-hdf5-pipeline-v2-10-landmask-refactor" title="Link to this heading"></a></h2>
+<p>IHO S-111 Edition 2.0.0 | DCF 2 | WGS84
+Multi-Area Grid Support — MIKE FM Hydrodynamic Model</p>
+<p>FIX v2.10 (perbaikan dari v2.9):
+[F40] classify_grid_by_land_ratio(): klasifikasi grid (darat/laut/campuran)
+[F41] mask_extrapolation_boundary(): BUG-U6 fix untuk boundary ekstrapolasi
+[F42] generate_new_grid_names(): rename grid laut secara berurutan (Grid01, Grid02, …)
+[F43] save_grid_mapping(): simpan mapping nama lama-&gt;baru ke file JSON
+[F44] process_one_timestep(): terapkan mask_extrapolation_boundary untuk hapus data bbox terluar darat
+[F45] Main: filter grid berdasarkan klasifikasi, terapkan rename grid laut
+[F46] Grid-specific landmask: terapkan landmask untuk grid campuran, skip grid darat murni
+[F28] Grid-specific output subdirectory untuk menghindari tabrakan filename
+[F29] configure_area_from_gridfile: support single name atau list
+[F30] Refactor main() -&gt; process_single_grid() untuk pipeline per-grid
+[F31] Per-gra land mask, adaptive regrid, dan grid properties
+=============================================================================</p>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.adaptive_grid_resolution">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">adaptive_grid_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_timesteps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_mb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_res_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#adaptive_grid_resolution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.adaptive_grid_resolution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">apply_land_mask_to_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#apply_land_mask_to_h5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5" title="Link to this definition"></a></dt>
+<dd><p>[F18][F19] Terapkan land mask dengan validasi ukuran.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5_multi">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">apply_land_mask_to_h5_multi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inst_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#apply_land_mask_to_h5_multi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.apply_land_mask_to_h5_multi" title="Link to this definition"></a></dt>
+<dd><p>[F35] Land mask untuk instance SurfaceCurrent.&lt;NN&gt; tertentu pada HDF5
+multi-instance. NN diformat 2-digit zero-padded (01, 02, …, 21).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.build_bbox_mask">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">build_bbox_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_lids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#build_bbox_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_bbox_mask" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.build_day_blocks">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">build_day_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sorted_days</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#build_day_blocks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_day_blocks" title="Link to this definition"></a></dt>
+<dd><p>Kelompokkan daftar hari menjadi blok sesuai OUTPUT_MODE.</p>
+<ul class="simple">
+<li><p>“daily” -&gt; 1 hari per blok  : [[d1], [d2], …]</p></li>
+<li><p>“3day”  -&gt; BLOCK_DAYS per blok: [[d1,d2,d3], [d4,d5,d6], …]</p></li>
+</ul>
+<p>Blok terakhir boleh berisi &lt; BLOCK_DAYS hari (sisa). Setiap blok
+menghasilkan SATU file HDF5 (semua timestep hari-hari dalam blok
+ditulis sebagai Group_001..Group_NNN berurutan).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.build_grid_and_properties">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">build_grid_and_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#build_grid_and_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_grid_and_properties" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.build_land_mask">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">build_land_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shp_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#build_land_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_land_mask" title="Link to this definition"></a></dt>
+<dd><p>[F16][F17][F20][F47][REFACTOR v3.0] Build land mask dari shapefile dengan GDAL rasterisasi optimal.</p>
+<p>Perbaikan v3.0:
+- Filosofi baru: SEMUA grid diproses, landmask hanya menghapus sel darat
+- Hapus buffer negatif yang menyebabkan masking berlebihan
+- Validasi CRS shapefile sebelum proses
+- Optimasi memori dengan rasterisasi langsung tanpa meshgrid</p>
+<p>[RENUMBER v3.1] Param opsional land_union: bila diberikan (hasil
+load_land_union, dibaca SEKALI untuk seluruh area gabungan), shapefile
+TIDAK dibaca ulang per-grid — mask dihitung langsung dari geometry via
+shapely contains_xy pada titik pusat sel grid. Orientasi flat 1D HARUS
+identik dengan jalur GDAL (row=lat menaik, col=lon menaik, ravel
+order=”C”) — lihat rekonstruksi lon_arr/lat_arr di bawah, yang
+mereproduksi PERSIS np.arange(bbox[0], bbox[2], dx) dari
+build_grid_and_properties (start &amp; step sama -&gt; hasil arange identik).
+Jika land_union None, perilaku SAMA PERSIS seperti sebelumnya (path GDAL
+asli, backward compatible, default).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.build_s111_metadata">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">build_s111_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime_issuance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geographic_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Teluk</span> <span class="pre">Jakarta,</span> <span class="pre">Indonesia'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#build_s111_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.build_s111_metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.calculate_estimated_file_size">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">calculate_estimated_file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_per_cell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#calculate_estimated_file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.calculate_estimated_file_size" title="Link to this definition"></a></dt>
+<dd><p>Estimasi ukuran file HDF5 dalam MB (12 bytes/sel × 1.2 overhead × groups).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_filter_grids">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">classify_and_filter_grids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grids_to_process</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#classify_and_filter_grids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_filter_grids" title="Link to this definition"></a></dt>
+<dd><p>[LMK-04] [F48] Generate rename mapping untuk SEMUA grid — TANPA filtering.</p>
+<p>Perbaikan v2.12:
+- Hapus filtering grid berdasarkan klasifikasi darat/laut
+- Semua grid yang memiliki data arus DFSU diproses
+- Landmask diterapkan per-grid untuk menghapus sel darat saja</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grids_to_process</strong> – Dict {grid_name: {“bbox”: […], …}}</p></li>
+<li><p><strong>output_dir</strong> – Direktori output untuk menyimpan mapping file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(grids_filtered, grid_rename_mapping, grid_classifications)
+- grids_filtered: Dict {grid_name: grid_cfg} SEMUA grid (no filtering)
+- grid_rename_mapping: Dict {old_name: new_name}
+- grid_classifications: Dict {grid_name: “land”|”sea”|”mixed”}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_renumber_grids">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">classify_and_renumber_grids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grids_to_process</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#classify_and_renumber_grids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.classify_and_renumber_grids" title="Link to this definition"></a></dt>
+<dd><p>Klasifikasi tiap grid (PURE_LAND/MIXED/PURE_SEA/NO_DATA) dan penomoran
+ulang spasial (row=0 di selatan, col=0 di barat; urutan S-&gt;N lalu W-&gt;E).</p>
+<p>Grid yang PURE_LAND (land_frac &gt;= LAND_SKIP_THRESHOLD) atau NO_DATA
+(tidak ada elemen DFSU di dalam bbox, bila elem_x/elem_y diberikan)
+dikeluarkan (keep=False) dari output S-111 — tapi tetap dilaporkan
+di CSV/JSON mapping &amp; PNG catalog untuk keperluan evaluasi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grids_to_process</strong> – dict {name: {“bbox”: [minlon, minlat, maxlon, maxlat], …}}</p></li>
+<li><p><strong>lon-first</strong><strong>)</strong><strong>.</strong> (<em>(</em><em>format S-111 parse_grid_file — bbox</em>)</p></li>
+<li><p><strong>land_union</strong> – shapely geometry (hasil load_land_union) atau None</p></li>
+<li><p><strong>grid</strong> (<em>(</em><em>-&gt; land_frac=0.0 untuk semua</em>)</p></li>
+<li><p><strong>PURE_SEA</strong><strong>)</strong><strong>.</strong> (<em>semua dianggap</em>)</p></li>
+<li><p><strong>elem_x</strong> – koordinat elemen DFSU (opsional). Jika None, n_elem</p></li>
+<li><p><strong>elem_y</strong> – koordinat elemen DFSU (opsional). Jika None, n_elem</p></li>
+<li><p><strong>dihitung</strong> (<em>tidak</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(kept_ordered, mapping, classified)
+- kept_ordered: dict {old_name: cfg} — HANYA grid KEPT, urut new_num.
+- mapping: dict {old_name: new_name} — HANYA grid KEPT.
+- classified: list[dict] — semua grid (termasuk yang di-skip), keys:
+old_name, bbox, center_lon, center_lat, land_frac, n_elem,
+tile_class, keep, row, col, new_name, new_num.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_auto">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">configure_area_auto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#configure_area_auto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_auto" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_gridfile">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">configure_area_from_gridfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#configure_area_from_gridfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_gridfile" title="Link to this definition"></a></dt>
+<dd><p>[F29] Support single name (str) atau list of names.
+Mengembalikan dict {name: bbox} agar caller bisa iterasi.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_list">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">configure_area_from_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#configure_area_from_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_from_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_manual">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">configure_area_manual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#configure_area_manual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.configure_area_manual" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.detect_dfsu_resolution">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">detect_dfsu_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#detect_dfsu_resolution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.detect_dfsu_resolution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.generate_new_grid_names">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">generate_new_grid_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid_grids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#generate_new_grid_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.generate_new_grid_names" title="Link to this definition"></a></dt>
+<dd><p>Hasilkan mapping nama grid lama -&gt; baru dengan urutan zero-padded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>valid_grids</strong> – List nama grid yang valid (sudah difilter, urut)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nama_baru}, misal {“Grid1”: “Grid01”, “Grid5”: “Grid02”}</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict {nama_lama</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.load_land_union">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">load_land_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shp_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_bbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#load_land_union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.load_land_union" title="Link to this definition"></a></dt>
+<dd><p>Baca shapefile daratan SEKALI (clipped ke full_bbox gabungan semua grid),
+lalu union_all() + buffer. Dipakai agar N grid tidak masing-masing
+membaca shapefile sendiri-sendiri (mahal untuk ratusan grid).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shp_path</strong> – path shapefile.</p></li>
+<li><p><strong>full_bbox</strong> – (minlon, minlat, maxlon, maxlat) — bbox gabungan seluruh grid.</p></li>
+<li><p><strong>buffer_deg</strong> – buffer dalam derajat (default LAND_BUFFER_DEG).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>shapely geometry (union, sudah di-buffer) atau None jika kosong.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.main">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.mask_extrapolation_boundary">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">mask_extrapolation_boundary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x_surf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y_surf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#mask_extrapolation_boundary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.mask_extrapolation_boundary" title="Link to this definition"></a></dt>
+<dd><p>[BUG-U6] Set NODATA untuk sel grid yang terlalu jauh dari elemen DFSU
+terdekat. Ini mengatasi boundary extrapolation yang menghasilkan data
+arus palsu di area darat di luar jangkauan model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u_grid</strong> – Grid 2D hasil regrid (float32)</p></li>
+<li><p><strong>v_grid</strong> – Grid 2D hasil regrid (float32)</p></li>
+<li><p><strong>grid_xx</strong> – Meshgrid koordinat grid (2D)</p></li>
+<li><p><strong>grid_yy</strong> – Meshgrid koordinat grid (2D)</p></li>
+<li><p><strong>elem_x_surf</strong> – Koordinat elemen DFSU dalam BBOX</p></li>
+<li><p><strong>elem_y_surf</strong> – Koordinat elemen DFSU dalam BBOX</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(u_grid, v_grid) dengan boundary extrapolation di-mask NODATA</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.open_and_detect_dfsu">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">open_and_detect_dfsu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfsu_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#open_and_detect_dfsu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.open_and_detect_dfsu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.parse_grid_file">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">parse_grid_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#parse_grid_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.parse_grid_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.plot_grid_catalog">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">plot_grid_catalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_shp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_png</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#plot_grid_catalog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.plot_grid_catalog" title="Link to this definition"></a></dt>
+<dd><p>Render peta katalog grid: poligon daratan sebagai latar, kotak grid
+berwarna per kelas, nomor baru untuk grid yang kept.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.prepare_grid_context">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">prepare_grid_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_lids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#prepare_grid_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.prepare_grid_context" title="Link to this definition"></a></dt>
+<dd><p>[F33] Siapkan konteks lengkap untuk satu grid TANPA memproses timestep.
+Mengembalikan dict dengan: bbox, bbox_mask_2d, elem_x_surf, elem_y_surf,
+grid_xx, grid_yy, grid_properties, land_mask, status.</p>
+<p>Dipakai oleh mode multi-instance (semua grid dievaluasi dulu, lalu
+instance dibuat satu per satu di HDF5 yang sama).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.process_daily">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">process_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day_timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_mask_2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'111_70_85_smart_grid_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_key_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#process_daily"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_daily" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.process_daily_multi_instance">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">process_daily_multi_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day_timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_contexts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'111_70_85_smart_grid_'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#process_daily_multi_instance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_daily_multi_instance" title="Link to this definition"></a></dt>
+<dd><p>[F33] Tulis SEMUA grid sebagai instance SurfaceCurrent.01 .. SurfaceCurrent.N
+dalam satu HDF5 (mode DCF2 multi-instance sesuai S-111 spec).</p>
+<p>Setiap grid -&gt; add_surface_current_instance (instance baru) lalu untuk setiap
+timestep di hari tersebut -&gt; add_data_from_arrays (group baru pada instance
+terakhir).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date_key</strong> – datetime.date untuk filename &amp; logging</p></li>
+<li><p><strong>day_timesteps</strong> – list timestep pada hari tersebut</p></li>
+<li><p><strong>ds_open</strong> – mikeio.Dataset</p></li>
+<li><p><strong>dfsu_type</strong> – “2D” / “3D”</p></li>
+<li><p><strong>grid_contexts</strong> – list of dict dari prepare_grid_context()</p></li>
+<li><p><strong>metadata</strong> – dict metadata S-111 (root)</p></li>
+<li><p><strong>output_dir</strong> – direktori output utama</p></li>
+<li><p><strong>prefix</strong> – prefix filename</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(output_h5, n_grid_written, n_groups_written)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.process_hourly">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">process_hourly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_mask_2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_properties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'111_70_85_smart_grid_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#process_hourly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_hourly" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.process_one_timestep">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">process_one_timestep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_mask_2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y_surf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#process_one_timestep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_one_timestep" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.process_single_grid">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">process_single_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_lids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daily_groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir_base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_rename_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_union</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#process_single_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.process_single_grid" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>[F30] Pipeline lengkap untuk memproses satu grid:</dt><dd><ol class="arabic simple">
+<li><p>BBOX mask</p></li>
+<li><p>Deteksi resolusi DFSU</p></li>
+<li><p>Adaptive regrid</p></li>
+<li><p>Build grid</p></li>
+<li><p>Build land mask</p></li>
+<li><p>Proses semua timestep (daily/hourly)</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid_name</strong> – Nama grid (untuk logging &amp; output naming)</p></li>
+<li><p><strong>grid_cfg</strong> – Dict {“bbox”: […]} atau object serupa</p></li>
+<li><p><strong>ds_open</strong> – Dataset MIKE IO yang sudah terbuka</p></li>
+<li><p><strong>dfsu_type</strong> – “2D” atau “3D”</p></li>
+<li><p><strong>elem_x</strong> – Koordinat elemen DFSU</p></li>
+<li><p><strong>elem_y</strong> – Koordinat elemen DFSU</p></li>
+<li><p><strong>layer_ids</strong> – Layer IDs (None untuk 2D)</p></li>
+<li><p><strong>unique_lids</strong> – Unique layer IDs (None untuk 2D)</p></li>
+<li><p><strong>daily_groups</strong> – Dict {date: [timesteps]}</p></li>
+<li><p><strong>sorted_days</strong> – List date yang sudah difilter</p></li>
+<li><p><strong>output_dir_base</strong> – Direktori output utama</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List path file HDF5 yang dihasilkan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.regrid_to_s111">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">regrid_to_s111</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#regrid_to_s111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.regrid_to_s111" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.regrid_uv_to_s111">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">regrid_uv_to_s111</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_u</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_xx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_yy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#regrid_uv_to_s111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.regrid_uv_to_s111" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.reopen_dfsu">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">reopen_dfsu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_ds_open</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfsu_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'D:\\Clivar</span> <span class="pre">S-100</span> <span class="pre">Benoa\\S100\\Lat_S100series</span> <span class="pre">(1)\\Lat_S100series\\HD_PLI_78.dfsu'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#reopen_dfsu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.reopen_dfsu" title="Link to this definition"></a></dt>
+<dd><p>[MEMFIX] Buka ulang handle DFSU setelah ds_open.read() gagal (biasanya
+dipicu tekanan memori) dan mem-poison state internal reader mikeio,
+menyebabkan kaskade DFS error code 2019 pada timestep berikutnya.</p>
+<p>Hanya handle dataset yang di-refresh — geometri (elem_x/elem_y/layer_ids)
+tidak berubah sehingga tidak perlu dihitung ulang oleh caller.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_create_s111">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">safe_close_and_create_s111</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_h5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dcf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#safe_close_and_create_s111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_create_s111" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_delete">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">safe_close_and_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_h5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#safe_close_and_delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.safe_close_and_delete" title="Link to this definition"></a></dt>
+<dd><p>Close HDF5 file handle and delete file if no valid data written.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">save_grid_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#save_grid_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping" title="Link to this definition"></a></dt>
+<dd><p>Simpan mapping grid lama -&gt; baru ke file CSV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mapping</strong> – Dict {old_name: new_name}</p></li>
+<li><p><strong>output_path</strong> – Path tujuan file CSV</p></li>
+<li><p><strong>grids</strong> – Dict opsional {grid_name: {“bbox”: […]}} untuk
+menyertakan koordinat BBOX di CSV.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Format: old_name,new_name,minx,miny,maxx,maxy</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_csv">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">save_grid_mapping_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#save_grid_mapping_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_csv" title="Link to this definition"></a></dt>
+<dd><p>Tulis CSV mapping old_name -&gt; new_name (+ row/col/class/land_frac/dll).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_json">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">save_grid_mapping_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#save_grid_mapping_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.save_grid_mapping_json" title="Link to this definition"></a></dt>
+<dd><p>[RENUMBER v3.1] Simpan mapping lengkap old_name -&gt; detail klasifikasi +
+new_name ke file JSON (mengaktifkan GRID_MAPPING_FILE yang sebelumnya
+didefinisikan tapi tidak pernah ditulis).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.uv_to_speed_direction">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">uv_to_speed_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#uv_to_speed_direction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.uv_to_speed_direction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="S111_70_85_smart_grid_auto_iterasi_landmask.validate_land_masked_h5">
+<span class="sig-prename descclassname"><span class="pre">S111_70_85_smart_grid_auto_iterasi_landmask.</span></span><span class="sig-name descname"><span class="pre">validate_land_masked_h5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">land_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/S111_70_85_smart_grid_auto_iterasi_landmask.html#validate_land_masked_h5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#S111_70_85_smart_grid_auto_iterasi_landmask.validate_land_masked_h5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="s104_v2_5_landmask.html" class="btn btn-neutral float-right" title="s104_v2_5_landmask module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

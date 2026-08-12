@@ -1,0 +1,17 @@
+# Virtual Environment
+sphinx_env/
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Sphinx Build Output (file HTML/PDF hasil generate)
+docs/_build/
+docs/build/
+_build/
+
+# Temp files
+.DS_Store
+Thumbs.db
